@@ -42,3 +42,11 @@ jobs:
           echo "IP Address: $IP_ADDRESS"
           echo "Test URL: http://127.0.0.1:3000"
           wget -qO- http://127.0.0.1:3000 | grep "Solar System"
+
+      - name: push Docker image
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/solar-system:${{ github.sha }}
+
