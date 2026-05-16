@@ -41,4 +41,4 @@ jobs:
           export IP_ADDRESS=$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' solar-system-app)
           echo "IP Address: $IP_ADDRESS"
           echo "Test URL: http://127.0.0.1:3000"
-          curl -s http://127.0.0.1:3000 | grep "Solar System"
+          wget -qO- http://127.0.0.1:3000 | grep "Solar System"
