@@ -71,5 +71,5 @@ jobs:
         uses: actions/upload-artifact@v7.0.1
         with:
           name: Code-Coverage
-          path: coverage/coverage-final.json
+          path: coverage
           retention-days: 1
